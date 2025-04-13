@@ -1,0 +1,149 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: 'love';
+    src: url(../font/love.otf);
+}
+@font-face {
+    font-family: 'love you';
+    src: url(../font/love\ you.otf);
+}
+@font-face {
+    font-family: 'i love you';
+    src: url(../font/i\ love\ you.ttf);
+}
+@font-face {
+    font-family: 'loved you';
+    src: url(../font/loved\ you.ttf);
+}
+
+body{
+    background-image: url(../img/love-bg.avif);
+    
+    min-height: 100vh; /* Занимает всю высоту экрана */
+}
+
+#h{
+    position: static;
+    padding: 20px 0; /* Добавим немного отступов сверху и снизу */
+}
+
+.h h1{
+    font-family: 'loved you';
+    font-weight: bold;
+    text-align: center;
+    font-size: 60px; /* Уменьшим размер шрифта для мобильных */
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: center;
+    color: rgb(184, 6, 6);
+    padding: 0 15px; /* Добавим немного боковых отступов */
+    line-height: 1.2; /* Улучшим читаемость многострочного заголовка */
+}
+
+.con{
+    min-height: calc(60vh - 40px); /* Учтем отступы заголовка */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px; /* Добавим общие отступы для контента */
+}
+
+.i-love{
+    position: absolute;
+}
+
+
+.text-content{
+    display: flex;
+    flex-direction: column; /* Изменим на вертикальное расположение для мобильных */
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Центрируем по вертикали и горизонтали */
+    text-align: center; /* Центрируем текст */
+
+    .my-love h1{
+        font-family: 'i love you';
+        font-size: 40px; /* Уменьшим размер шрифта для мобильных */
+        color: rgb(184, 6, 6);
+        padding: 10px;
+        line-height: 1.2;
+    }
+
+    .btn{
+        display: flex;
+        flex-direction: column; /* Разместим кнопку и счетчик вертикально */
+        align-items: center;
+        gap: 10px; /* Добавим небольшой отступ между кнопкой и счетчиком */
+        margin-top: 20px; /* Добавим отступ сверху от текста */
+
+        button{
+            height: 45px;
+            font-size: 16px; /* Немного уменьшим размер шрифта кнопки */
+            width: 120px; /* Сделаем кнопку немного шире */
+            border-radius: 10px;
+            border: 2px solid rgb(184, 6, 6);
+            outline: 0;
+            box-shadow: 0 0 10px;
+            color: rgb(184, 6, 6);
+            font-family: "Montserrat", sans-serif;
+            font-weight: 500;
+            cursor: pointer;
+        }
+
+        .ne-vidno{
+            font-size: 40px; /* Уменьшим размер шрифта счетчика */
+            font-weight: bold;
+            font-family: 'love';
+            display: none;
+            color: rgb(184, 6, 6);
+        }
+    }
+}
+
+/* Медиа-запрос для экранов шириной до 600px (типичные смартфоны) */
+@media (max-width: 600px) {
+    .h h1 {
+        font-size: 40px;
+    }
+
+    .text-content .my-love h1 {
+        font-size: 30px;
+    }
+
+    .text-content .btn button {
+        font-size: 15px;
+        width: 100px;
+    }
+
+    .text-content .btn .ne-vidno {
+        font-size: 30px;
+    }
+}
+@media (max-width: 321px) {
+    .my-love{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+/* Медиа-запрос для экранов шириной от 601px до 768px (типичные планшеты в портретной ориентации) */
+@media (min-width: 601px) and (max-width: 768px) {
+    .h h1 {
+        font-size: 70px;
+    }
+
+    .text-content .my-love h1 {
+        font-size: 50px;
+    }
+}
